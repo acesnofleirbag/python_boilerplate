@@ -1,0 +1,21 @@
+version: "3.8"
+
+services:
+  app:
+    build: .
+    image: "auth_boilerplate"
+    container_name: "auth_container"
+    ports:
+      - "8081:8081"
+    depends_on:
+      - database
+    volumes:
+      - .:/usr/src/app
+
+  database:
+    image: ""
+    container_name: "postgres_container"
+    ports:
+      - "5432:5432"
+    environment:
+      - 
